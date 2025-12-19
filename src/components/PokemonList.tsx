@@ -1,17 +1,17 @@
 import { Grid } from "@mui/material";
-import { IndexedPokemon } from "../interfaces/pokemon.interfaces";
+import { IndexedPokemon, ListPokemon } from "../interfaces/pokemon.interfaces";
 import PokemonCard from "./PokemonCard";
 
 interface PokedexListProps{
-   pokemons: IndexedPokemon[]; 
+   pokemons: ListPokemon[]; 
 }
 
 const PokemonList = ({ pokemons }: PokedexListProps) =>{
     return (
-        <Grid>{
+        <Grid container spacing={4}>{
         pokemons.length > 0? pokemons.map((p) => {
             return(
-                <Grid>
+                <Grid size ={{xs: 2.5, md: 2.5}}>
                     <PokemonCard key={p.name} pokemon={p}/>
                 </Grid>
             ) 
