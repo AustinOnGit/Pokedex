@@ -18,7 +18,7 @@ const usePokemon = () => {
         const listPokemon: ListPokemon = {
             name: indexedPokemon.name,
             url: indexedPokemon.url,
-            image: `${POKEMON_GIF_URL}/${pokedexNumber}.gif`,
+            image: `${POKEMON_GIF_URL}/${pokedexNumber}.png`,
             pokedexNumber
         }
 
@@ -30,7 +30,7 @@ const usePokemon = () => {
             const result = await httpClient.get<PokemonListResponse>(nextUrl)
             if(result?.data){
                 const listPokemons = result.data.results.map(p => indexedPokemonToListPokemon(p))
-                setPokemon(listPokemons)
+                setPokemon([...pokemons, ...listPokemons])
                 setNextUrl(result.data.next)
             }
             console.log(result)

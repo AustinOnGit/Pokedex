@@ -9,7 +9,7 @@ const Home = () => {
         <Container>
             <PokemonList pokemons={pokemons}></PokemonList>
             {hasMorePokemon ? (
-                <Button variant="contained" onClick={fetchNextPage}>Load </Button> 
+                <Button variant="contained" onClick={fetchNextPage}>Load More</Button> 
             ) :null}
         </Container>
     );

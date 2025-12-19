@@ -8,10 +8,10 @@ interface PokedexListProps{
 
 const PokemonList = ({ pokemons }: PokedexListProps) =>{
     return (
-        <Grid container spacing={4}>{
+        <Grid container spacing={3}>{
         pokemons.length > 0? pokemons.map((p) => {
             return(
-                <Grid size ={{xs: 2.5, md: 2.5}}>
+                <Grid size ={{xs: 3}}>
                     <PokemonCard key={p.name} pokemon={p}/>
                 </Grid>
             ) 
